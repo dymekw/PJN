@@ -1,4 +1,4 @@
-$path = "test/"
+$path = "training/"
 $extension = ".txt"
 
 $files = [

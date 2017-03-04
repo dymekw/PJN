@@ -14,5 +14,3 @@ until n > max_n do
   end
   n+=1
 end
-
-
