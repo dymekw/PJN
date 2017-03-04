@@ -1,5 +1,14 @@
 $path = "training/"
+$statsPath = "stats/"
+$testsPath = "test/"
+
 $extension = ".txt"
+
+$methods = [
+	 "euclidean", 
+	 "manhattan", 
+	 "maximum",
+	 "cosine"]
 
 $files = [
 	 "english1",
