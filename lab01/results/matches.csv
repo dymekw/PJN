@@ -1,0 +1,13 @@
+1,euclidean,52,manhattan,51,cosine,52,maximum,39
+2,euclidean,58,manhattan,51,cosine,58,maximum,42
+3,euclidean,60,manhattan,29,cosine,60,maximum,40
+4,euclidean,54,manhattan,10,cosine,54,maximum,28
+5,euclidean,51,manhattan,10,cosine,51,maximum,20
+
+
+
+1,euclidean,8,manhattan,9,cosine,8,maximum,21
+2,euclidean,2,manhattan,9,cosine,2,maximum,18
+3,euclidean,0,manhattan,31,cosine,0,maximum,20
+4,euclidean,6,manhattan,50,cosine,6,maximum,32
+5,euclidean,9,manhattan,50,cosine,9,maximum,40

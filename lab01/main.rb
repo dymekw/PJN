@@ -1,6 +1,8 @@
 require_relative 'file_comparator'
 require_relative 'constants'
 require_relative 'stats_persistence_service'
+require_relative 'classification_service'
+require_relative 'visualisation_service'
 
 class String
   def to_bool
@@ -14,10 +16,6 @@ end
 
 def parse_file_name(filePath, extension, file)
   file.match(/#{filePath}(.*)#{extension}/i).captures[0]
-end
-
-def get_language(fileName)
-  fileName.match(/(.*)\d/i).captures[0]
 end
 
 def analyze(stats)
@@ -63,4 +61,10 @@ until n > ARGV[2].to_i do #change it!!!!
   n += 1
 end
 
-save_results(analyze(results))
+classification = get_classification_stats(results)
+matches = analyze(results)
+
+save_classification(classification)
+visualize_stats(classification)
+save_results(matches)
+visualize_matches(matches[0])

@@ -25,7 +25,6 @@ def save_results(stats)
     end
     string += "\n"
   end
-  print string
   
   string += "\n\n\n"
   stats[1].each do |n, result_n|
@@ -39,7 +38,22 @@ def save_results(stats)
     string += "\n"
   end
   
-  File.open("matches.csv", "w") {|f| f.write string }
+  File.open($resultsPath + "matches.csv", "w") {|f| f.write string }
+end
+
+def save_classification(stats)
+  string = ""
+  stats.each do |n, nStats|
+    nStats.each do |method, methodStats|
+      methodStats.each do |language, langStats|
+	langStats.each do |classificator, value|
+	  string = string + [n.to_s, method, classificator, language, value.to_s].join(',')
+	  string += "\n"
+        end
+      end
+    end
+  end
+    File.open($resultsPath + "classification.csv", "w") {|f| f.write string }
 end
 
 def save_stats(stats, n, fileName)

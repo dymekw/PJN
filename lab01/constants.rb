@@ -1,6 +1,7 @@
 $path = "training/"
 $statsPath = "stats/"
 $testsPath = "test/"
+$resultsPath = "results/"
 
 $extension = ".txt"
 
@@ -9,6 +10,12 @@ $methods = [
 	 "manhattan", 
 	 "maximum",
 	 "cosine"]
+
+$classificators = [
+	 "precision",
+	 "recall",
+	 "f1",
+	 "accuracy"]
 
 $files = [
 	 "english1",
@@ -28,6 +35,14 @@ $files = [
          "polish3",
          "spanish1",
          "spanish2"]
+
+$languages = [
+	 "english",
+	 "finnish",
+         "german",
+         "italian",
+         "polish",
+         "spanish"]
 
 $encodings = {
 	 "english1" => "us-ascii",
