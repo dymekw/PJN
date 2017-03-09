@@ -44,6 +44,6 @@ def compare_files(path, fileToGuess, filesWithStats, method, n, splitIntoWords)
       statistics[fileWithStats] = result
     end
   end
-  
+
   statistics
 end

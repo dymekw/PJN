@@ -49,7 +49,7 @@ testFiles = Dir[$testsPath + "*"].map! {|file| parse_file_name($testsPath, ".txt
 
 results = Hash.new 0
 n = 1
-until n > ARGV[2].to_i do #change it!!!!
+until n > ARGV[2].to_i do
   results[n] = Hash.new 0
   
   testFiles.each do |file|
