@@ -4,6 +4,21 @@ def min (a,b)
   a>b ? b : a
 end
 
+def max (a,b)
+  a>b ? a : b
+end
+
+def get_cosine(ngramsX, ngramsY) #stats should be normalized
+  intersection = ngramsX.keys.to_set & ngramsY.keys.to_set
+  
+  product = 0
+  intersection.each do |ngram|
+    product += ngramsX[ngram]*ngramsY[ngram]
+  end
+  
+  return 1-product
+end
+
 def get_dice(ngramsX, ngramsY)
   intersection = ngramsX.keys.to_set & ngramsY.keys.to_set
   
@@ -20,6 +35,17 @@ def get_dice(ngramsX, ngramsY)
   ngramsY.each do |key, value|
     denominator += value
   end
+  
+  return 1 - (nominator.to_f / denominator.to_f)
+end
+
+def get_dice_without_rep(ngramsX, ngramsY)
+  intersection = ngramsX.keys.to_set & ngramsY.keys.to_set
+  
+  nominator = intersection.size
+  nominator *= 2
+  
+  denominator = ngramsX.keys.size + ngramsY.keys.size
   
   return 1 - (nominator.to_f / denominator.to_f)
 end
@@ -43,5 +69,8 @@ def longest_common_substr(s1, s2)
         end
       end
     end
-    return s1[longest_end_pos - longest_length + 1 .. longest_end_pos]
+
+    nominator = (s1[longest_end_pos - longest_length + 1 .. longest_end_pos]).length
+    denominator = max(s1.length, s2.length)
+    return 1 - (nominator.to_f/denominator.to_f)
   end
