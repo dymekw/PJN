@@ -1,2 +1,0 @@
-wierzba: 149.156.100.237 / 172.18.64.10
-CLP/PLP: /usr/local
